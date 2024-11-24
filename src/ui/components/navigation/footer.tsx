@@ -24,7 +24,7 @@ export const Footer = ()=>{
                     theme="white"
                     weight="medium"
                 >
-                     Plus D'informations
+                     Plus D informations
                 </Typography>
 
                 <Typography

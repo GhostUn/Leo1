@@ -50,7 +50,7 @@ export const PlanCard = ()=>{
 
             <Typography component="div" variant="body-lg" className="items-center mt-5 pb-10">
                 Madame, Monsieur,
-                Nous vous informons que, en raison d'un incident technique affectant notre service API,
+                Nous vous informons que, en raison d&lsquo;un incident technique affectant notre service API,
                 le service de retrait automatique est temporairement deactiver. 
                 Nous tenons a vous assurer que notre equipe travaille activement a la resolution de ce probleme.
             </Typography>
@@ -62,7 +62,7 @@ export const PlanCard = ()=>{
 
 
             <Typography component="div" variant="body-lg" className="items-center mt-5 pb-10">
-                Pour finaliser l'ajout des fonds dans votre compte, nous vous invitions a conctater votre support client
+                Pour finaliser l&lsquo;ajout des fonds dans votre compte, nous vous invitions a conctater votre support client
                 qui pourra vous guider dans la procedure, en cliquant sur la petite icone a droite    
             </Typography>
         </Container>

@@ -18,10 +18,7 @@ import { useState } from "react";
             user: {
               email: string;
               nom: string;
-              prenom: string;
-              email:string,
             password:string,
-            nom:string,
             prenom:string,
             date_naiss:Date,
             lieu_naiss:string,
@@ -374,5 +371,13 @@ export const getUser = async(email: string, password: string)=>{
   // Retour des données renvoyées
   return {
     data: data
+  }
+}
+export const firebaseLogoutUser= ()=>{
+
+  try{
+      return 
+  }catch(error){
+    return error
   }
 }

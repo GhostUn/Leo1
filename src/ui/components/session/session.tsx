@@ -1,29 +1,26 @@
 import { useAuth } from "@/context/AuthUserContext";
-import { GUEST, REGISTERED, WELCOM} from "@/lib/session-status";
+import { GUEST, REGISTERED, WELCOM } from "@/lib/session-status";
 import { SessionStatusTypes } from "@/types/session-status-types";
 import { ScreenSpinner } from "@/ui/design-system/spinner/screen-spiner";
-import { url } from "inspector";
 import { useRouter } from "next/router";
 
 interface Props {
   children?: React.ReactNode;
   sessionStatus?: SessionStatusTypes;
-  isfrist?:boolean
+  isfrist?: boolean;
 }
 
 export const Session = ({ children, sessionStatus, isfrist }: Props) => {
+  const { authUserIsLoading, authUser } = useAuth(); // Déplacer ici
   const router = useRouter();
-  if(sessionStatus === GUEST && isfrist){
-   // router.asPath !== "/onboarding"
 
-      if(router.asPath == "/Connexion"){
-
-        console.log('isfirst', router.asPath )
-        //router.push(router.asPath)
-      }
-    return
+  if (sessionStatus === GUEST && isfrist) {
+    if (router.asPath === "/Connexion") {
+      console.log("isfirst", router.asPath);
+    }
+    return;
   }
-  const { authUserIsLoading, authUser } = useAuth();
+
   const onboardingIsCompleted = authUser?.userDocument?.onboardingIsCompleted;
 
   const shouldRedirectToOnboarding = () => {
@@ -59,14 +56,13 @@ export const Session = ({ children, sessionStatus, isfrist }: Props) => {
     router.push("/Connexion");
     return <ScreenSpinner />;
   }
-  
 
   if (sessionStatus === GUEST && !authUserIsLoading) {
     if (!authUser) {
       return <>{children}</>;
     } else {
-        console.log('sessionStatus', sessionStatus + !authUserIsLoading)
-        router.push("/Connexion/inscription");
+      console.log("sessionStatus", sessionStatus + !authUserIsLoading);
+      router.push("/Connexion/inscription");
     }
   }
 
@@ -78,10 +74,9 @@ export const Session = ({ children, sessionStatus, isfrist }: Props) => {
     }
   }
 
-
   if (!sessionStatus && !authUserIsLoading) {
     return <>{children}</>;
   }
-  
+
   return <ScreenSpinner />;
 };

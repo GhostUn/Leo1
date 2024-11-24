@@ -1,20 +1,11 @@
 "use client";
-import dynamic from "next/dynamic";
-import React from "react";
-import ChartOne from "@/ui/components/Charts/ChartOne";
-import ChartTwo from "@/ui/components/Charts/ChartTwo";
-import ChatCard from "@/ui/components/Chat/ChatCard";
-import TableOne from "@/ui/components/Tables/TableOne";
-import CardDataStats from "@/ui/components/CardDataStats";
+import { useEffect, useState } from "react";
 import { Button } from "@/ui/design-system/button/button";
-import { Ri24HoursFill, RiCashFill, RiEye2Fill, RiEyeFill, RiSearchEyeFill } from "react-icons/ri";
-import { Avatar } from "@/ui/design-system/avatar/avatar";
-import Image from  "next/image"
+import { RiCashFill } from "react-icons/ri";
 import { CarteVisa } from "@/ui/components/cards/cards-visa";
-import DefaultLayout from "@/ui/components/Breadcrumbs/Layouts/DefaultLayout";
 import { Typography } from "@/ui/design-system/typography/typography";
 import { Container } from "@/ui/components/container/container";
-import { RiArrowDownCircleFill2, RiArrowDropUpFill, RiArrowUpLine, RiArrowUpWideFill } from "react-icons/ri";
+import { RiArrowUpWideFill } from "react-icons/ri";
 import { useAuth } from "@/context/AuthUserContext";
 import Link from "next/link";
 interface Props {
@@ -22,6 +13,7 @@ interface Props {
   solde?: number;
   accountnumber?: string;
   nameUser?: string;
+  statut?:string;
   
 }
 
@@ -30,7 +22,7 @@ export const Dashboard= ({
   
   montant = 20000, //authUser.montant
   solde = 20000,
- 
+  statut,
   
 }:Props) => {
   
@@ -45,6 +37,14 @@ const images = [
   "/assets/images/leo01.jpg",
 ];
 
+  const [isBlinking, setIsBlinking] = useState(true);
+
+  useEffect(() => {
+    // Arrêter le clignotement si le statut de l'utilisateur est "valider"
+    if (authUser && authUser.statut === "valider") {
+      setIsBlinking(false);
+    }
+  }, []);
   
   return (
     <>  

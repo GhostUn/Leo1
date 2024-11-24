@@ -67,7 +67,7 @@ export const CallToActionView = ()=>{
             <Container className="py-10">
             <Typography variant="h5" theme="secondary" component="h1">
                         15 octobre 2021, nous annonçons la facilitation de notre première
-                        Collecte de fonds auprès d'investisseurs en France, en Angleterre et au Nigéria
+                        Collecte de fonds auprès des investisseurs en France, en Angleterre et au Nigéria
                         </Typography>
             </Container>
                 <Container className="grid grid-cols-12 gap-2 py-5"  >

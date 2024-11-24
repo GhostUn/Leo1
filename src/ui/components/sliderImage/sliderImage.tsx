@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useCallback } from "react";
+import Image from "next/image";
+
 
 interface SliderProps {
   images: string[]; // Tableau des URLs des images
@@ -9,9 +11,6 @@ const SliderImage: React.FC<SliderProps> = ({ images, interval = 3000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Fonction pour changer d'image
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
 
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) =>
@@ -19,12 +18,14 @@ const SliderImage: React.FC<SliderProps> = ({ images, interval = 3000 }) => {
     );
   };
 
-  // Défilement automatique
+  const goToNext = useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  }, [images.length]);
+  
   useEffect(() => {
     const autoSlide = setInterval(goToNext, interval);
     return () => clearInterval(autoSlide); // Nettoyage de l'intervalle
-  }, [interval, images]);
-
+  }, [interval, goToNext]);
   return (
     <div className="relative w-full max-w-3xl mx-auto overflow-hidden rounded-lg">
       {/* Images */}
@@ -35,14 +36,18 @@ const SliderImage: React.FC<SliderProps> = ({ images, interval = 3000 }) => {
           width: `${images.length * 100}%`,
         }}
       >
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`Slide ${index + 1}`}
-            className="w-full h-auto object-cover"
-          />
-        ))}
+      {images.map((image, index) => (
+        <Image
+          key={index}
+          src={image}
+          alt={`Slide ${index + 1}`}
+          layout="responsive"
+          width={1200} // Exemple : largeur de l'image
+          height={800} // Exemple : hauteur de l'image
+          objectFit="cover"
+          className="w-full h-auto object-cover"
+        />
+      ))}
       </div>
 
       {/* Boutons précédent et suivant */}
@@ -67,6 +72,8 @@ const SliderImage: React.FC<SliderProps> = ({ images, interval = 3000 }) => {
             className={`block w-3 h-3 rounded-full ${
               index === currentIndex ? "bg-white" : "bg-gray-400"
             }`}
+
+            
           ></span>
         ))}
       </div>

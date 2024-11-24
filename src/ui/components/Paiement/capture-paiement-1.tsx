@@ -1,4 +1,4 @@
-import { firebaseLogoutUser } from "@/api/authentication";
+//import { firebaseLogoutUser } from "@/api/authentication";
 import { Box } from "@/ui/design-system/box/box"
 import { Button } from "@/ui/design-system/button/button";
 import { Typography } from "@/ui/design-system/typography/typography";
@@ -8,7 +8,7 @@ import { RiUser3Line, RiMenu2Fill, RiWallet3Line } from "react-icons/ri"
 
 export const PaiementAcountCapture = () =>{
    
-    const handleLoOutUser =async ()=>{
+  /*  const handleLoOutUser =async ()=>{
         const { error} = await firebaseLogoutUser();
         if (error) {
             toast.error(error.message)
@@ -17,7 +17,7 @@ export const PaiementAcountCapture = () =>{
         toast.success("Deconnexion ")
         
     }
-
+*/
     const handleDepot = ()=>{
 
     }
@@ -35,7 +35,7 @@ export const PaiementAcountCapture = () =>{
                 <Typography variant="caption2" weight="medium">
                 <ActiveLink href="/mon-espace/wallet" >
                     <Button variant="success" icon={{icon:RiWallet3Line}} action={handleDepot}>
-                        Deposer de l'argent
+                        Deposer de l&apos;argent
                      </Button>
                 </ActiveLink>
                 </Typography>

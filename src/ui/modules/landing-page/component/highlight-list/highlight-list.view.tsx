@@ -17,11 +17,11 @@ export const HighLightListView = () => {
             </div>
             <div className="max-w-md space-y-7">
                 <Typography variant="h4" component="h2" weight="regular" className="" theme="primary">
-                Utilisez notre carte physique n'importe où
+                Utilisez notre carte physique n&apos;importe où
                 dans le monde
                 </Typography>
                 <Typography variant="lead"  weight="regular" theme="gray">
-                Maintenant, payez un article ou n'importe quel service dans un magasin local avec votre carte bancaire physique..
+                Maintenant, payez un article ou n&apos;importe quel service dans un magasin local avec votre carte bancaire physique..
 
                 </Typography>
 
@@ -30,8 +30,8 @@ export const HighLightListView = () => {
                     Pas de problème, payez facilement sur place.
                     </ListPoint>
                     <ListPoint>les paiements internationaux à un prix abordable.</ListPoint>
-                    <ListPoint>Prenez votre carte physique n'importe où dans le monde.</ListPoint>
-                    <ListPoint>Prélever de l'argent de n'importe quel DAB n'importe où dans le monde.</ListPoint>
+                    <ListPoint>Prenez votre carte physique n&apos;importe où dans le monde.</ListPoint>
+                    <ListPoint>Prélever de l&apos;argent de n&apos;importe quel DAB n&apos;importe où dans le monde.</ListPoint>
 
                 </div>
                 <div className="relative inline-block bg-gray-400">
@@ -54,7 +54,7 @@ export const HighLightListView = () => {
                     
                     <Typography variant="caption2" component="h2" theme="gray">
                      Nous vous protégeons , 
-                     alors n'ayez pas peur d'utiliser votre téléphone ou votre carte pour 
+                     alors n&apos;ayez pas peur d&apos;utiliser votre téléphone ou votre carte pour 
                      tous vos paiements en ligne et hors ligne
                     </Typography>
 
@@ -71,7 +71,7 @@ export const HighLightListView = () => {
                     </div>
                     <div className="relative inline-block">
                         <Button baseUrl="/#" icon={{icon:RiArrowRightLine}} iconPosition="right">
-                            Let's go
+                            Let&apos;s go
                         </Button>
                         <Image width={25} height={27} alt="clic" 
                         className="asolute -bottom-15 right-7"

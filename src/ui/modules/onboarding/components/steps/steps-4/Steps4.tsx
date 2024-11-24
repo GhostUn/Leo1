@@ -52,7 +52,7 @@ export const Steps4 =({
                         </Typography>
                         <Typography theme="gray" variant="body-base" component="p" >
                         
-                            Notre centre de distribution client ouvert 24 heures sur 24 n'est qu'à un clic Contactez-nous
+                            Notre centre de distribution client ouvert 24 heures sur 24 n&apos;est qu&apos;à un clic Contactez-nous
                         </Typography>
                     </div>
                 </div>

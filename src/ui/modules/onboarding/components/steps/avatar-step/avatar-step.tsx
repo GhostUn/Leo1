@@ -43,7 +43,7 @@ export const AvatarStep =({
         let uploadTask: UploadTask
 
       console.log('selectedImage', selectedImage)
-        if(selectedImage !== null){
+        if(selectedImage !== null && authUser){
             toggle()
             const {error} = await AvatarCreate(
                 authUser.uid,
@@ -104,12 +104,7 @@ export const AvatarStep =({
                             Dernier etape
                         </Typography>
                         <Typography theme="gray" variant="body-base" component="p" >
-                            c'est sur que t'as une tete a etre sur Coders Tigers! 
-                            Mais on a besoin de ta plus belle photo de profil pour que
-                            tout le monde puisse voir a quelle point tu es incroyable.
-                            Mettre une photo simpare c'est garantie de te faire remarque 
-                            et faire craquer les developpers en quete de nouveau contact.
-                            Alors montre nous ta belle geulle et rejoins les Tigres Codeurs.   
+                        
                         </Typography>
                     </div>
                 </div>

@@ -43,9 +43,9 @@ export interface ForgetPasswordFormFielsType{
 }
 
 export interface OnboardingProfileFormFieldsType{
-    displayName:string;
-    expertise:string;
-    biography: string;
+    nom:string;
+    prenom:string;
+    telephone: string;
 }
 
 export interface PhonemunberFieldsType{

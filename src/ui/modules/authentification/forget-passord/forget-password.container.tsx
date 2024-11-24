@@ -46,7 +46,10 @@ export const ForgetPasswordContainer = ()=>{
             register,
             handleSubmit,
             onSubmit,
-            isLoading 
+            isLoading,
+            setValue(name, value) {
+                
+            },
          }}
         />
 )}

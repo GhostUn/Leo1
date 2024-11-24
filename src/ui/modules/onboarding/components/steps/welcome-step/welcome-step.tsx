@@ -30,7 +30,7 @@ export const WelcomeStep =({
                         créez votre compte, fini les tracasseries
                         </Typography>
                         <Typography theme="gray" variant="body-base" component="p" >
-                        Une vision sur le futur vous permet d'épargner votre argent en toute sécurité
+                        Une vision sur le futur vous permet d&apos;épargner votre argent en toute sécurité
                         
                         </Typography>
                     </div>

@@ -8,7 +8,7 @@ export default function Inscription() {
   return (
     <>
       {/* */}
-      <Seo title="Inscription sur Tiger Monkeys" description="page d'inscription'" />
+      <Seo title="Inscription" description="inscription'" />
       <LayoutUser sessionStatus={GUEST}>
             <RegisterContainer/>
       </LayoutUser>

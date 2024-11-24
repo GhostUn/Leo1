@@ -4,7 +4,7 @@ import { Footer } from "../navigation/footer"
 import { Navigation } from "../navigation/navigations"
 import { UserAccountNavigation } from "../navigation/user-account-navigation"
 import { Session } from "@/ui/components/session/session"
-import { SessionStatusTypes } from "@/types/Session-status-types"
+import { SessionStatusTypes } from "@/types/session-status-types"
 import { PaiementAcountCapture } from "../Paiement/capture-paiement-1"
 import Sidebar from "@/ui/components/Sidebar";
 import { useState } from "react"

@@ -1,15 +1,8 @@
 "use client";
 import dynamic from "next/dynamic";
-import React from "react";
-import ChartOne from "@/ui/components/Charts/ChartOne";
-import ChartTwo from "@/ui/components/Charts/ChartTwo";
-import ChatCard from "@/ui/components/Chat/ChatCard";
-import TableOne from "@/ui/components/Tables/TableOne";
 import CardDataStats from "@/ui/components/CardDataStats";
 import { Button } from "@/ui/design-system/button/button";
-import { Ri24HoursFill, RiEye2Fill, RiEyeFill, RiSearchEyeFill } from "react-icons/ri";
-import { Avatar } from "@/ui/design-system/avatar/avatar";
-import Image from  "next/image"
+import { RiEyeFill } from "react-icons/ri";
 import { CarteVisa } from "@/ui/components/cards/cards-visa";
 import DefaultLayout from "@/ui/components/Breadcrumbs/Layouts/DefaultLayout";
 
@@ -17,9 +10,6 @@ const MapOne = dynamic(() => import("@/ui/components/Maps/MapOne"), {
   ssr: false,
 });
  
-const ChartThree = dynamic(() => import("@/ui/components/Charts/ChartThree"), {
-  ssr: false,
-});
 
 export const UserAccountContainer= () => {
   return (

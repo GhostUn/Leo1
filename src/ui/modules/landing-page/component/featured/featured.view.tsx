@@ -94,9 +94,9 @@ export const FeaturedView = ()=>{
                         theme="black"
                         className="mb-8">
                               Vous pouvez recevoir des paiements de Paypal,
-                                l'échange de plates-formes de plaques ou de plateformes de paris en ligne ,
+                                l&apos;échange de plates-formes de plaques ou de plateformes de paris en ligne ,
                                 à partir des redevances YouTube , Facebook, Instagram,
-                                TikTok et bien d'autres. {" "}
+                                TikTok et bien d&apos;autres. {" "}
                         </Typography>
                         
                         <div className="relative w-[430px] h-[230px] mb-6 p-10  z-0 overflow-hidden">

@@ -12,7 +12,7 @@ export const CurrentCourseCtaView = ()=>{
                 Formations React.js gratuite
             </Typography>
             <Typography variant="lead" component="h3" className="mb-5">
-                Apprends a coder l'app des Tigres codeurs
+                Apprends a coder l&apos;app des 
             </Typography>
 
             <Typography variant="caption3" component="p" theme="gray" className="mb-16">

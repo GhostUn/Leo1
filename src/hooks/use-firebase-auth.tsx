@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { UserDocument, UserInterface } from "@/types/user";
 
 export default function useAdonisAuth() {
@@ -6,17 +6,17 @@ export default function useAdonisAuth() {
   const [authUserIsLoading, setAuthUserIsLoading] = useState<boolean>(true);
 
   // Formater les données utilisateur
-  const formatAuthUser = (user: UserInterface) => ({
+  const formatAuthUser = useCallback((user: UserInterface) => ({
     uid: user.uid,
     email: user.email,
     displayName: user.displayName,
     emailVerified: user.emailVerified,
     phoneNumber: user.phoneNumber,
     photoURL: user.photoURL,
-  });
+  }), []);
 
   // Récupérer le document utilisateur via AdonisJS
-  const getUserDocument = async (user: UserInterface) => {
+  const getUserDocument = useCallback(async (user: UserInterface) => {
     const token = localStorage.getItem("authToken"); // Récupérer le JWT
 
     if (!token) {
@@ -50,10 +50,10 @@ export default function useAdonisAuth() {
     } finally {
       setAuthUserIsLoading(false);
     }
-  };
+  }, []);
 
   // Changement d'état de l'utilisateur
-  const authStateChanger = async () => {
+  const authStateChanger = useCallback(async () => {
     const token = localStorage.getItem("authToken");
 
     if (!token) {
@@ -86,12 +86,12 @@ export default function useAdonisAuth() {
     } finally {
       setAuthUserIsLoading(false);
     }
-  };
+  }, [formatAuthUser, getUserDocument]);
 
   // Utiliser useEffect pour surveiller l'état d'authentification
   useEffect(() => {
     authStateChanger(); // Appel pour vérifier l'état d'authentification au chargement
-  }, []);
+  }, [authStateChanger]);
 
   return {
     authUser,

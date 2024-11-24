@@ -99,7 +99,7 @@ export const ModificationForm = ({ form }: Props) => {
             errorMsg="Ce champ est obligatoire"
             id="addresse"
             isAutocompleted
-            defaultValue={authUser?.Addresse || ""}
+            defaultValue={authUser?.addresse || ""}
           />
 
           <Input

@@ -52,7 +52,7 @@ export const Steps3 =({
                         </Typography>
                         <Typography theme="gray" variant="body-base" component="p" >
                         Trouvez une succursale de notre banque ou un guichet automatique près de chez vous.
-                        Accès facile Connectez-vous rapidement et en toute sécurité avec l'un des éléments suivants :
+                        Accès facile Connectez-vous rapidement et en toute sécurité avec l&apos;un des éléments suivants :
 
                         Compte + Secure Pass
 

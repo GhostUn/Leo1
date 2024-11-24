@@ -41,11 +41,11 @@ export const FrequenceInves = ({ isFinalStep }: BaseComponentProps) => {
                   className="text-center"
                 >
                   Tu fais maintenant partie de la tribu des  ! Nous
-                  sommes ravis de t'accueillir parmi nous. Tu vas pouvoir te
-                  lancer dans l'aventure, partager tes projets les plus fous et
+                  sommes ravis de t&lsquo;accueillir parmi nous. Tu vas pouvoir te
+                  lancer dans l&lsquo;aventure, partager tes projets les plus fous et
                   rencontrer des partenaires aussi passionnés que toi. Alors
                   prépare-toi, car notre communauté est prête à secouer les
-                  branches et à te faire grimper au sommet de l'arbre du
+                  branches et à te faire grimper au sommet de l&lsquo;arbre du
                   développement ! 
                 </Typography>
               </div>

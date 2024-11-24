@@ -29,8 +29,10 @@ export const Paiement =({
     stepsList,
     getCurrentStep
 }:BaseComponentProps)=>{
-    const {authUser} = useAuth();
-    console.log(authUser)
+  //  const {authUser} = useAuth();
+   
+        
+    
     const {value: isLoading, setValue: setLoading} = useToggle();
     const {
         handleSubmit,
@@ -41,8 +43,8 @@ export const Paiement =({
         reset
     } = useForm<PhonemunberFieldsType>();
 
-    const {displayName, expertise, biography} = authUser.userDocument;
-    
+   /*
+    const {nom, prenom, telephone} = authUser;
     // display value is exist...
     useEffect(()=>{
         const fieldsToUpdate : ("phoneNumber")[] =[
@@ -53,14 +55,17 @@ export const Paiement =({
         }
        
     },[])
-    
-    const handleUpdateUserDocument = async (
+    */
+   /* const handleUpdateUserDocument = async (
         formData:OnboardingProfileFormFieldsType)=>{
+          
+
         const {error} = await firestoreUpdateDocument(
             "users",
             authUser.uid,
             formData
         );
+        
         console.log("form",formData)
         if(error){
             setLoading(false);
@@ -70,22 +75,22 @@ export const Paiement =({
         setLoading(false);
         reset();
         next();
-    }
+    }*/
     const onSubmit: SubmitHandler<OnboardingProfileFormFieldsType> = async (formData) => {
         setLoading(true)
 
-        if(displayName !== formData.displayName ||
-             expertise !== formData.expertise ||
-              biography !== formData.biography){
+      /*  if(nom !== formData.nom ||
+             prenom !== formData.prenom ||
+              telephone !== formData.telephone){
                 //....
                 if(
-                    displayName !== formData.displayName 
-                    || authUser.displayName !== formData.displayName
+                    nom !== formData.nom 
+                    || authUser.nom !== formData.nom
                 ){
                     const data = {
-                        displayName : formData.displayName,
-                        expertise:formData.expertise,
-                        biography:formData.biography
+                        displayName : formData.nom,
+                        expertise:formData.prenom,
+                        biography:formData.telephone
                     }
                     const {error} = await updateUserIdentification(
                         authUser.uid,
@@ -99,6 +104,7 @@ export const Paiement =({
                 }
             handleUpdateUserDocument(formData)
         }
+            */
         setLoading(false)
 
         next();
@@ -128,6 +134,9 @@ export const Paiement =({
                                         handleSubmit,
                                         onSubmit,
                                         isLoading,
+                                        setValue(name, value) {
+                                            
+                                        },
                                     }
                                 }
                             />

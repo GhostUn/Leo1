@@ -97,7 +97,10 @@ const handleSignInUser = async ({ email, password }: LoginFormFielsType) => {
             register,
             handleSubmit,
             onSubmit,
-            isLoading 
+            isLoading,
+            setValue(name, value) {
+              
+            },
          }}
         />
     </>

@@ -40,7 +40,7 @@ export const Paiement =({
         setValue,
         reset
     } = useForm<PhonemunberFieldsType>();
-
+/*
     const {displayName, expertise, biography} = authUser.userDocument;
     
     // display value is exist...
@@ -53,7 +53,8 @@ export const Paiement =({
         }
        
     },[])
-    
+    */
+    /*
     const handleUpdateUserDocument = async (
         formData:OnboardingProfileFormFieldsType)=>{
         const {error} = await firestoreUpdateDocument(
@@ -70,10 +71,10 @@ export const Paiement =({
         setLoading(false);
         reset();
         next();
-    }
+    }*/
     const onSubmit: SubmitHandler<OnboardingProfileFormFieldsType> = async (formData) => {
         setLoading(true)
-
+/*
         if(displayName !== formData.displayName ||
              expertise !== formData.expertise ||
               biography !== formData.biography){
@@ -99,6 +100,7 @@ export const Paiement =({
                 }
             handleUpdateUserDocument(formData)
         }
+            */
         setLoading(false)
 
         next();
@@ -128,6 +130,9 @@ export const Paiement =({
                                         handleSubmit,
                                         onSubmit,
                                         isLoading,
+                                        setValue(name, value) {
+                                            
+                                        },
                                     }
                                 }
                             />

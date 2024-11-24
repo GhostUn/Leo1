@@ -17,7 +17,7 @@ export interface Props{
   formData: RegisterFormFielsType,
 
 }
-export const RegisterContainer = ( {formData}:Props)=>{
+export const RegisterContainer = ()=>{
   const router = useRouter()
 
 const {value:isLoading , setValue:setIsLoading, toggle } = useToggle();
@@ -78,7 +78,7 @@ console.log(isLoading)
       setIsLoading(false)
       toast.success(data.message)
      }
-     //reset()
+     reset()
         // Rediriger vers l'espace utilisateur après une inscription réussie
        // navigate('/dashboard');
        router.push("/mon-espace")

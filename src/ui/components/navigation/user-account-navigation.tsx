@@ -9,13 +9,13 @@ import { RiUser3Line, RiMenu2Fill, RiWallet3Fill, RiCashFill } from "react-icons
 export const UserAccountNavigation = () =>{
    
     const handleLoOutUser =async ()=>{
-        const { error} = await firebaseLogoutUser();
+      /*  const { error} = await firebaseLogoutUser();
         if (error) {
             toast.error(error.message)
             return;
         }
         toast.success("Deconnexion ")
-        
+        */
     }
     return(
         <Box className="flex flex-col gap-7">

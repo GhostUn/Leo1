@@ -51,7 +51,7 @@ export const Steps5 =({
                         Paiements en déplacement
                         </Typography>
                         <Typography theme="gray" variant="body-base" component="p" >
-                        Vous pouvez transférer de l'argent. payer les factures et acheter du temps d'antenne.</Typography>
+                        Vous pouvez transférer de l&apos;argent. payer les factures et acheter du temps d&apos;antenne.</Typography>
                     </div>
                 </div>
                 <div className="flex items-center h-full col-span-6">
