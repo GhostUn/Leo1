@@ -37,15 +37,15 @@ const images = [
   "/assets/images/leo01.jpg",
 ];
 
-  const [isBlinking, setIsBlinking] = useState(true);
-
+//  const [isBlinking, setIsBlinking] = useState(true);
+/*
   useEffect(() => {
     // Arrêter le clignotement si le statut de l'utilisateur est "valider"
     if (authUser && authUser.statut === "valider") {
       setIsBlinking(false);
     }
-  }, []);
-  
+  }, [authUser]);
+  */
   return (
     <>  
       <CarteVisa accountname={authUser?.nom }  accountprenom={ authUser?.prenom} cvv={authUser?.cvv} typeCarte={"visa"}  accountnumber ={ authUser?.accountnumber}titre="paris" montant={authUser?.solde_compte}  />
