@@ -44,7 +44,9 @@ export const EditUser: React.FC<EditUserProps> = ({ user, onClose , form }) => {
       // Convertir temporairement `solde_compte` en chaîne pour l'envoi
       const payload: UserDocument = {
         ...formData,
-        solde_compte: formData.solde_compte, // Assurer un format chaîne
+        solde_compte: formData.solde_compte, 
+        solde_carte:formData.solde_carte,
+        // Assurer un format chaîne
       };
   
       console.log("Payload envoyé :", payload);
@@ -143,3 +145,4 @@ export const EditUser: React.FC<EditUserProps> = ({ user, onClose , form }) => {
 
   );
 };
+export default EditUser;

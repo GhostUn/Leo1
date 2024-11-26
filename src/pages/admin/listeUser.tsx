@@ -16,6 +16,11 @@ export const ListeUser = ({ users, isLoading, onEdit }: ListeUserProps) => {
   if (isLoading) {
     return <Spinner/>
   }
+// Fonction pour gérer la modification
+const handleEdit = (userId: number) => {
+  // Rediriger ou ouvrir un modal pour éditer l'utilisateur
+  console.log(`Modifier l'utilisateur avec l'ID: ${userId}`);
+};
 
   return (
     <table className="w-full text-left table-auto border-collapse">
@@ -48,8 +53,4 @@ export const ListeUser = ({ users, isLoading, onEdit }: ListeUserProps) => {
   );
 };
 
-// Fonction pour gérer la modification
-const handleEdit = (userId: number) => {
-  // Rediriger ou ouvrir un modal pour éditer l'utilisateur
-  console.log(`Modifier l'utilisateur avec l'ID: ${userId}`);
-};
+export default ListeUser;
