@@ -34,7 +34,9 @@ const handleEdit = (userId: number) => {
         </tr>
       </thead>
       <tbody>
-        {users.map((user) => (
+      {
+      users && Array.isArray(users) ? (
+        users.map((user) =>
           <tr key={user.id}>
             <td className="px-4 py-2 border">{user.nom}</td>
             <td className="px-4 py-2 border">{user.prenom}</td>
@@ -47,7 +49,12 @@ const handleEdit = (userId: number) => {
               
             </td>
           </tr>
-        ))}
+
+)) : (
+  <p>Aucun utilisateur enregistre</p>
+)
+}
+        
       </tbody>
     </table>
   );
