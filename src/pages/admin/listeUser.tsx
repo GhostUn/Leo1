@@ -3,6 +3,7 @@ import React from 'react';
 import { UserDocument } from '@/types/user';
 import { Spinner } from '@/ui/design-system/spinner/spinner';
 import { Button } from '@/ui/design-system/button/button';
+import { modifUser } from '@/api/user';
 
 interface ListeUserProps {
   users: UserDocument[];
@@ -17,9 +18,23 @@ export const ListeUser = ({ users, isLoading, onEdit }: ListeUserProps) => {
     return <Spinner/>
   }
 // Fonction pour gérer la modification
-const handleEdit = (userId: number) => {
+ /*const handleEdit = (userId: number) => {
   // Rediriger ou ouvrir un modal pour éditer l'utilisateur
   console.log(`Modifier l'utilisateur avec l'ID: ${userId}`);
+};*/
+const handleEdit = async (formData: UserDocument) => {
+  try {
+    const payload = { ...formData };
+    const response = await modifUser(payload);
+
+    if (!response.ok) {
+      throw new Error("Erreur lors de la mise à jour.");
+    }
+
+    console.log("Succès :", await response.json());
+  } catch (error) {
+    console.error("Erreur :", error);
+  }
 };
 
   return (

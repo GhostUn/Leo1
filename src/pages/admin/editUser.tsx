@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import { Toast } from 'node_modules/react-toastify/dist/components';
 import { register } from 'module';
 import { Input } from "@/ui/design-system/forms/input";
-import { FormsType } from '@/types/forms';
+import { FormsType, RegisterFormFielsType } from '@/types/forms';
 import { Button } from '@/ui/design-system/button/button';
 
 interface EditUserProps {
@@ -16,8 +16,8 @@ interface EditUserProps {
 }
 interface Props {
   }
-
-export const EditUser: React.FC<EditUserProps> = ({ user, onClose , form }) => {
+export const EditUser = ({ user, onClose , form }:EditUserProps) => {
+  /*
   const [formData, setFormData] = useState<UserDocument>(user);
   const {
     control,
@@ -35,51 +35,51 @@ export const EditUser: React.FC<EditUserProps> = ({ user, onClose , form }) => {
 
   // Fonction pour soumettre les modifications
 
+
   
-  
-  const handleEdit = async (formData: UserDocument) => {
+  const handleEdit = async ( 
+    formData:
+    UserDocument) => {
+ 
     try {
-      console.log("formData123", formData);
-  
-      // Convertir temporairement `solde_compte` en chaîne pour l'envoi
-      const payload: UserDocument = {
-        ...formData,
-        solde_compte: formData.solde_compte, 
-        solde_carte:formData.solde_carte,
-        // Assurer un format chaîne
-      };
-  
-      console.log("Payload envoyé :", payload);
-  
-      const response = await modifUser(payload);
-      console.log("response410", response);
-  
-      if (!response.ok) {
-        toast.error("Erreur lors de la mise à jour.");
-        return;
-      } else {
-        toast.success("Modification effectuée !");
-      }
-  
-      const data = await response.json();
-      console.log("Données renvoyées :", data);
-  
-      // Si besoin, mettez à jour le formulaire ou l'état ici
-  
-      return { data };
-    } catch (error) {
-      console.error("Erreur lors de la mise à jour de l’utilisateur :", error);
-      toast.error("Une erreur est survenue !");
+        console.log('formData123',formData)
+
+        if (typeof formData.solde_compte === 'string') {
+            formData.solde_compte = parseInt(formData.solde_compte, 10); // Conversion si nécessaire
+          } else if (typeof formData.solde_compte === 'number') {
+
+            formData.solde_compte = formData.solde_compte; // Assurer un format chaîne
+          } else {
+          }
+    const response = await modifUser(formData)
+        console.log('response410', response)
+    if (!response.ok){
+       
+      return
+    }else{
+        toast.success("modification effectuer");
     }
+    const data = await response;
+    // Si la requête a réussi, récupérez les données renvoyées par le backend
+
+  // Retour des données renvoyées
+  return {
+    
+    data: data
+  }
+
+} catch (error) {
+      console.error("Erreur lors de la mise à jour de l’utilisateur:", error);
+        
+}
   };
-  
   
   {console.log('formData type', typeof formData.solde_carte);}
   return (
     <form onSubmit={handleSubmit(handleEdit)} className="pt-8 pb-5 space-y-4 space-x-5">
       <div className="flex items-center gap-5">
       <div className="relative w-full h-auto space-y-5 m-5">
-        <h2 className="text-xl font-semibold">Modifier lutilisateur</h2>
+        <h2 className="text-xl font-semibold">Modifier un utilisateur</h2>
         <label htmlFor="solde_compte"> Solde du compte</label>
         <Input
             isLoading={isLoading}
@@ -95,18 +95,18 @@ export const EditUser: React.FC<EditUserProps> = ({ user, onClose , form }) => {
            hidden
           />
         <Input
-          isLoading={isLoading}
-          placeholder="solde du compte"
-          type="number"
-          register={register}
-          errors={errors}
-          errorMsg="Ce champ est obligatoire"
-          id="solde_compte"
-          isAutocompleted
-          required={false}
-          defaultValue={formData.solde_compte || ""} // Toujours fournir un nombre ou une chaîne
-        />
-
+            isLoading={isLoading}
+            placeholder="solde du compte"
+            type="number"
+            register={register}
+            errors={errors}
+            errorMsg="Ce champ est obligatoire"
+            id="solde_compte"
+            isAutocompleted
+            required={false}
+            defaultValue={formData.solde_compte || ""}
+           
+          />
             <label htmlFor="solde_compte"> Solde de la carte</label>
 
           <Input
@@ -119,7 +119,7 @@ export const EditUser: React.FC<EditUserProps> = ({ user, onClose , form }) => {
             id="solde_carte"
             isAutocompleted
             required = {false}
-            defaultValue={ formData.solde_carte || ""}
+            defaultValue={ formData.solde_compte || ""}
           />
 
 
@@ -144,5 +144,6 @@ export const EditUser: React.FC<EditUserProps> = ({ user, onClose , form }) => {
       </form>
 
   );
+  */
 };
-export default EditUser;
+export default EditUser

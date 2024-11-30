@@ -12,8 +12,8 @@ export interface UserInterface{
 
 export interface UpdateSolde{
     id:number
-    solde_compte: string
-    solde_carte:string
+    solde_compte: number
+    solde_carte:number
 }
 
 

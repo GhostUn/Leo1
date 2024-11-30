@@ -3,7 +3,7 @@ import { ListeUser } from './listeUser';
 import { UserDocument } from '@/types/user';
 import { fetchUsers, fetchUserById } from "@/api/user";
 import { EditUser } from './editUser'; // Composant de modification
-import { RegisterFormFielsType } from '@/types/forms';
+import { FormsType, RegisterFormFielsType } from '@/types/forms';
 import { useForm } from 'react-hook-form';
 
 export const ListeUserContainer = () => {
@@ -21,7 +21,7 @@ export const ListeUserContainer = () => {
     reset,
     setError,
     register,
-   } = useForm<RegisterFormFielsType>();
+   } = useForm<FormsType>();
    
   useEffect(() => {
     const fetchData = async () => {
@@ -53,7 +53,7 @@ export const ListeUserContainer = () => {
 
   return (  // Ajout du return pour retourner le JSX
     <div>
-      {selectedUser ? (
+      {/*selectedUser ? (
         <EditUser user={selectedUser} onClose={() => setSelectedUser(null)} 
         form = {{
           errors,
@@ -62,16 +62,18 @@ export const ListeUserContainer = () => {
           handleSubmit,
           onSubmit ,
           isLoading,
-          setValue(name, value) {
+          setValue() {
             
           },
          }}
         
         /> // Affiche le composant de modification si un utilisateur est sélectionné
-      ) : (
+      ) :*/ (
         <ListeUser users={users} isLoading={isLoading} onEdit={onSubmit} /> // Affiche la liste d’utilisateurs
       )}
     </div>
   );
 };
+
+
 export default ListeUserContainer;
